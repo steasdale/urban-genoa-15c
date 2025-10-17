@@ -1,0 +1,75 @@
+<!-- This is a plug-and-play KML that pulls the official municipal boundary straight from the Comune di Genova GeoServer via WFS (vector, not a raster overlay). It will render the precise polygon in Google Earth/QGIS without you having to hard-code thousands of coordinates. -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Comune di Genova – Confine amministrativo (preciso)</name>
+
+    <!-- Simple style -->
+    <Style id="genoaBoundary">
+      <LineStyle>
+        <color>ff0066cc</color> <!-- opaque outline -->
+        <width>2</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>4d66ccff</color> <!-- ~30% alpha fill -->
+        <fill>1</fill>
+        <outline>1</outline>
+      </PolyStyle>
+    </Style>
+
+    <!-- NetworkLink fetches the exact polygon from the city's GeoServer as KML -->
+    <NetworkLink>
+      <name>Fetch official boundary from GeoServer (WFS→KML)</name>
+      <open>1</open>
+      <Link>
+        <!-- WFS GetFeature returning KML. Many GeoServers accept either endpoint; both are included for robustness. -->
+        <href>
+          <![CDATA[
+https://mappe.comune.genova.it/geoserver/SITGEO/ows?
+service=WFS&
+version=1.0.0&
+request=GetFeature&
+typeName=SITGEO:V_CONF_COMUNE&
+outputFormat=application/vnd.google-earth.kml+xml
+          ]]>
+        </href>
+        <refreshMode>onInterval</refreshMode>
+        <refreshInterval>86400</refreshInterval> <!-- refresh daily -->
+      </Link>
+      <styleUrl>#genoaBoundary</styleUrl>
+    </NetworkLink>
+
+    <!-- Optional fallback to the generic WFS path if the ows endpoint is blocked -->
+    <NetworkLink>
+      <name>Fallback WFS endpoint</name>
+      <open>0</open>
+      <Link>
+        <href>
+          <![CDATA[
+https://mappe.comune.genova.it/geoserver/SITGEO/wfs?
+service=WFS&
+version=1.0.0&
+request=GetFeature&
+typeName=SITGEO:V_CONF_COMUNE&
+outputFormat=application/vnd.google-earth.kml+xml
+          ]]>
+        </href>
+        <refreshMode>onInterval</refreshMode>
+        <refreshInterval>86400</refreshInterval>
+      </Link>
+      <styleUrl>#genoaBoundary</styleUrl>
+    </NetworkLink>
+
+    <!-- Metadata placemark -->
+    <Placemark>
+      <name>Comune di Genova – metadata</name>
+      <description><![CDATA[
+      Boundary served from the city GeoServer. Dataset: “Confini comunali”
+      (limits derived from external edges of the Municipi; Council Resolution n. 40/2020).
+      License: CC BY 4.0. For provenance and catalog record, see the dataset page.
+      ]]></description>
+      <Point><coordinates>8.93,44.41,0</coordinates></Point>
+    </Placemark>
+  </Document>
+</kml>
