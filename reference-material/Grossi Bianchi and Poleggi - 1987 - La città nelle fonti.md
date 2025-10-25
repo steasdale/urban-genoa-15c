@@ -176,7 +176,7 @@ La costruzione di una prima sede stabile del governo è registrata da Iacopo Dor
 
 Al contorno sono: a nord case e terre dei Doria **4.**, a ponente i lotti nel 1296 ceduti a livello *ad superedificandum* dal Capitolo di San Lorenzo agli scutarii **5.**;[^d] a sud la residenza arcivescovile che comprendeva il palazzo vecchio **6.** e quello «nuovo» **7.** uniti con un pontile, e l'orto **8.** Nella regione della *Domus* l'arcivescovo dal XII secolo possedeva terre concesse a diversi feudatari. Tra questi erano i Porco che avevano più case, orti e una torre **9.**, mentre terre e case verso il Puteo Curlo **10.** tenevano gli Ainuini e i De Murta **11.**[^e]
 
-![image-20240712123915841](C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20240712123915841.png)
+![image-20240712123915841](\assets\image-20240712123915841.png)
 
 #### II - Il Palazzo Ducale nel XIV secolo
 
@@ -570,3 +570,4 @@ Cantelli ferraio al Molo, citato nello stesso foglio come precedente assegnatari
 [^v]: G. PALLAVICINO, *Inventione...* cit., 22 agosto 1587 e 13 sett. 1589.
 [^w]: G. PALLAVICINO, op. cit. 30 luglio 1583.
 [^x]: ASCG, Archivio Segreto *Politicorum*, ng 1650 mazzo 4, doc. 44, 16 agosto 1585) va per le lunghe con una causa che dura sino al 1593 per ottenere la riquadratura dell'area e la cessione di case dai Canonici di San Lorenzo (A.C.S.L., plico 404, 13/10).
+
